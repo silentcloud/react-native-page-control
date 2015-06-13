@@ -12,6 +12,10 @@ $ npm install react-native-page-control --save
 
 ![page control demo](http://withfun.cn/upload/pagecontrol.gif)
 
+How to run ?  
+ - git clone
+ - npm install & npm start
+
 ## Example
 
 ```jsx
