@@ -19,7 +19,13 @@ How to run ?
 ## Example
 
 ```jsx
-<PageControl style={{position:'absolute', left:0, right:0, bottom:10}} numberOfPages={3} currentPage={1} hidesForSinglePage={true} pageIndicatorTintColor='gray' indicatorSize={{width:8, height:8}} currentPageIndicatorTintColor='black' />
+<PageControl style={{position:'absolute', left:0, right:0, bottom:10}}
+             numberOfPages={3}
+             currentPage={1}
+             hidesForSinglePage={true} 
+             pageIndicatorTintColor='gray'
+             indicatorSize={{width:8, height:8}}
+             currentPageIndicatorTintColor='black' />
 ```
 
 
