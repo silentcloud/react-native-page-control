@@ -12,8 +12,8 @@ var PageControl = React.createClass({
         numberOfPages: React.PropTypes.number,
         currentPage: React.PropTypes.number,
         hidesForSinglePage: React.PropTypes.bool,
-        pageIndicatorTintColor: React.PropTypes.string,
-        currentPageIndicatorTintColor: React.PropTypes.string,
+        indicatorStyle: View.propTypes.style,
+        currentIndicatorStyle: View.propTypes.style,
         indicatorSize: React.PropTypes.object
     },
 
@@ -22,8 +22,8 @@ var PageControl = React.createClass({
             numberOfPages: 0,
             currentPage:0,
             hidesForSinglePage: false,
-            pageIndicatorTintColor: 'gray',
-            currentPageIndicatorTintColor: 'white',
+            indicatorStyle: {backgroundColor: 'gray'},
+            currentIndicatorStyle: {backgroundColor: 'white'},
             indicatorSize: {width:8, height:8}
         };
     },
@@ -40,12 +40,6 @@ var PageControl = React.createClass({
             marginLeft:5,
             marginRight:5
         };
-        var indicatorColor = {
-            backgroundColor: this.props.pageIndicatorTintColor
-        };
-        var currentIndicatorColor = {
-            backgroundColor: this.props.currentPageIndicatorTintColor
-        }
         var pages = [];
         for (var i = 0; i < this.props.numberOfPages; i++) {
             pages.push(i);
@@ -53,7 +47,7 @@ var PageControl = React.createClass({
         return (
             this.props.hidesForSinglePage && pages.length <= 1 ? <View style={{backgroundColor:'yellow'}}></View> :
             <View style={[styles.container, defaultStyle, style]}>
-                {pages.map((el, i) => <View key={i} style={[indicatorStyle, i == this.props.currentPage ? currentIndicatorColor : indicatorColor]}></View> )}
+                {pages.map((el, i) => <View key={i} style={[indicatorStyle, this.props.indicatorStyle, i == this.props.currentPage && this.props.currentIndicatorStyle]}></View> )}
             </View>
         );
     }
