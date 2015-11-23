@@ -7,6 +7,6 @@
   },
   "dependencies": {
     "react-native": "^0.5.0",
-    "react-native-page-control": "^1.0.2"
+    "react-native-page-control": "^1.0.3"
   }
 }

@@ -10,7 +10,7 @@ $ npm install react-native-page-control --save
 
 ## Demo
 
-![page control demo](http://withfun.cn/upload/pagecontrol.gif)
+![page control demo](http://silentcloud.github.io/upload/pagecontrol.gif)
 
 How to run ?  
  - git clone
@@ -23,9 +23,9 @@ How to run ?
              numberOfPages={3}
              currentPage={1}
              hidesForSinglePage={true} 
-             pageIndicatorTintColor='gray'
+             indicatorStyle={backgroundColor: 'gray'}
              indicatorSize={{width:8, height:8}}
-             currentPageIndicatorTintColor='black' />
+             currentIndicatorStyle={backgroundColor: 'white'} />
 ```
 
 
@@ -36,6 +36,6 @@ How to run ?
 | numberOfPages | YES | `0` | `number` | The number of pages the receiver shows (as dots) |
 | currentPage | NO | `0` | `number` |The current page, shown by the receiver as a white dot |
 | hidesForSinglePage | NO | `false` | `bool` | A Boolean value that controls whether the page control is hidden when there is only one page |
-| pageIndicatorTintColor | NO | `gray` | `string` | The tint color to be used for the page indicator |
-| currentPageIndicatorTintColor | NO |`white` | `string`  | The tint color to be used for the current page indicator. |
+| indicatorStyle | NO | `{backgroundColor: 'gray'}` | `object` | style for the page indicator |
+| currentIndicatorStyle | NO |`{backgroundColor: 'white'}` | `object`  | style for the current page indicator. |
 | indicatorSize | NO |`{width:8, height:8}` | `object`  | size of page indicator. |
