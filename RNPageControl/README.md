@@ -37,5 +37,5 @@ $ npm install react-native-page-control --save
 | currentPageIndicatorTintColor | NO |`white` | `string`  | The tint color to be used for the current page indicator. |
 | defersCurrentPageDisplay | NO | `false` | `bool`  | A Boolean value that controls when the current page is displayed. |
 | updateCurrentPageDisplay | NO | null | `func`  | Updates the page indicator to the current page. |
-| indicatorStyle | NO | `{backgroundColor: 'gray'}` | `object` | style for the page indicator |
-| currentIndicatorStyle | NO |`{backgroundColor: 'white'}` | `object`  | style for the current page indicator. |
+| indicatorStyle | NO | `{}` | `object` | style for the page indicator |
+| currentIndicatorStyle | NO |`{}` | `object`  | style for the current page indicator. |
