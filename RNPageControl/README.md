@@ -35,7 +35,5 @@ $ npm install react-native-page-control --save
 | hidesForSinglePage | NO | `false` | `bool` | A Boolean value that controls whether the page control is hidden when there is only one page |
 | pageIndicatorTintColor | NO | `gray` | `string` | The tint color to be used for the page indicator. |
 | currentPageIndicatorTintColor | NO |`white` | `string`  | The tint color to be used for the current page indicator. |
-| defersCurrentPageDisplay | NO | `false` | `bool`  | A Boolean value that controls when the current page is displayed. |
-| updateCurrentPageDisplay | NO | null | `func`  | Updates the page indicator to the current page. |
 | indicatorStyle | NO | `{}` | `object` | style for the page indicator |
 | currentIndicatorStyle | NO |`{}` | `object`  | style for the current page indicator. |
