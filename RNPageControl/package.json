@@ -1,10 +1,8 @@
 {
   "name": "react-native-page-control",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React native page control, like ios  UIPageControl",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "Qiang.mou",
   "repository": {
     "type": "git",
     "url": "https://github.com/silentcloud/react-native-page-control.git"
@@ -14,16 +12,20 @@
     "react-native",
     "react-component",
     "page-control",
-    "PageControl"
+    "PageControl",
+    "UIPageControl"
   ],
+  "main": "PageControl.js",
   "readmeFilename":"README.md",
-  "author": "Qiang.mou",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/silentcloud/react-native-page-control/issues"
   },
   "homepage": "https://github.com/silentcloud/react-native-page-control",
   "dependencies": {
+    "object-assign": "~4.0.1"
   },
-  "main": "PageControl.js"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }

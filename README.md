@@ -22,10 +22,12 @@ How to run ?
 <PageControl style={{position:'absolute', left:0, right:0, bottom:10}}
              numberOfPages={3}
              currentPage={1}
-             hidesForSinglePage={true} 
-             indicatorStyle={backgroundColor: 'gray'}
-             indicatorSize={{width:8, height:8}}
-             currentIndicatorStyle={backgroundColor: 'white'} />
+             hidesForSinglePage={true}
+             pageIndicatorTintColor='gray'
+             currentPageIndicatorTintColor='white'
+             indicatorStyle={{borderRadius: 5}} 
+             currentIndicatorStyle={{borderRadius: 5}}
+             indicatorSize={{width:8, height:8}} />
 ```
 
 
@@ -36,6 +38,9 @@ How to run ?
 | numberOfPages | YES | `0` | `number` | The number of pages the receiver shows (as dots) |
 | currentPage | NO | `0` | `number` |The current page, shown by the receiver as a white dot |
 | hidesForSinglePage | NO | `false` | `bool` | A Boolean value that controls whether the page control is hidden when there is only one page |
+| pageIndicatorTintColor | NO | `gray` | `string` | The tint color to be used for the page indicator. |
+| currentPageIndicatorTintColor | NO |`white` | `string`  | The tint color to be used for the current page indicator. |
+| defersCurrentPageDisplay | NO | `false` | `bool`  | A Boolean value that controls when the current page is displayed. |
+| updateCurrentPageDisplay | NO | null | `func`  | Updates the page indicator to the current page. |
 | indicatorStyle | NO | `{backgroundColor: 'gray'}` | `object` | style for the page indicator |
 | currentIndicatorStyle | NO |`{backgroundColor: 'white'}` | `object`  | style for the current page indicator. |
-| indicatorSize | NO |`{width:8, height:8}` | `object`  | size of page indicator. |
