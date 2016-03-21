@@ -1,7 +1,7 @@
 var React = require('react-native');
 var assign = require('object-assign');
 
-var {StyleSheet, View} = React;
+var { StyleSheet, View, TouchableWithoutFeedback } = React;
 
 var PageControl = React.createClass({
 
@@ -14,6 +14,7 @@ var PageControl = React.createClass({
         indicatorSize: React.PropTypes.object,
         indicatorStyle: View.propTypes.style,
         currentIndicatorStyle: View.propTypes.style,
+        onPageIndicatorPress: React.PropTypes.func
     },
 
     getDefaultProps: function () {
@@ -25,8 +26,13 @@ var PageControl = React.createClass({
             currentPageIndicatorTintColor: 'white',
             indicatorSize: {width: 8, height: 8},
             indicatorStyle: {},
-            currentIndicatorStyle: {}
+            currentIndicatorStyle: {},
+            onPageIndicatorPress: function() {}
         };
+    },
+
+    onPageIndicatorPress: function(idx) {
+        this.props.onPageIndicatorPress(idx);
     },
 
     render: function () {
@@ -59,8 +65,9 @@ var PageControl = React.createClass({
 
         return (
           this.props.hidesForSinglePage && pages.length <= 1 ? null : <View style={[styles.container, defaultStyle, style]}>
-              {pages.map((el, i) => <View key={i}
-                                          style={i == this.props.currentPage ? currentIndicatorStyle: indicatorStyle} />
+              {pages.map((el, i) => <TouchableWithoutFeedback key={i} onPress={this.onPageIndicatorPress.bind(this, i)}>
+                    <View style={i == this.props.currentPage ? currentIndicatorStyle: indicatorStyle} />
+                </TouchableWithoutFeedback>
               )}
           </View>
         );

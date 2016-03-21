@@ -27,7 +27,8 @@ How to run ?
              currentPageIndicatorTintColor='white'
              indicatorStyle={{borderRadius: 5}} 
              currentIndicatorStyle={{borderRadius: 5}}
-             indicatorSize={{width:8, height:8}} />
+             indicatorSize={{width:8, height:8}}
+             onPageIndicatorPress={this.onItemTap} />
 ```
 
 
@@ -42,3 +43,4 @@ How to run ?
 | currentPageIndicatorTintColor | NO |`white` | `string`  | The tint color to be used for the current page indicator. |
 | indicatorStyle | NO | `{}` | `object` | style for the page indicator |
 | currentIndicatorStyle | NO |`{}` | `object`  | style for the current page indicator. |
+| onPageIndicatorPress | NO | function(index){} | `func`  | page indicator press hook function. `param: index` current press indicator index|

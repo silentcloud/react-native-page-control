@@ -30,6 +30,9 @@ var PageControlDemo = React.createClass({
       currentPage: Math.floor((offsetX - pageWidth / 2) / pageWidth) + 1
     });
   },
+  onItemTap: function(index) {
+    console.log(index);
+  },
   render: function() {
     return (
       <View style={styles.container}>
@@ -45,7 +48,7 @@ var PageControlDemo = React.createClass({
               <Text>page3</Text>
             </View>
           </ScrollView>
-          <PageControl style={{position:'absolute', left:0, right:0, bottom:10}} numberOfPages={1} currentPage={this.state.currentPage} hidesForSinglePage={true} pageIndicatorTintColor='gray' indicatorSize={{width:8, height:8}} currentPageIndicatorTintColor='black' />
+          <PageControl style={{position:'absolute', left:0, right:0, bottom:10}} numberOfPages={1} currentPage={this.state.currentPage} hidesForSinglePage={true} pageIndicatorTintColor='gray' indicatorSize={{width:8, height:8}} currentPageIndicatorTintColor='black' onPageIndicatorPress={this.onItemTap} />
         </View>
       </View>
     );
