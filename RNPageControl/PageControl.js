@@ -1,7 +1,8 @@
-var React = require('react-native');
+var React = require('react');
+var ReactNative = require('react-native');
 var assign = require('object-assign');
 
-var { StyleSheet, View, TouchableWithoutFeedback } = React;
+var { StyleSheet, View, TouchableWithoutFeedback } = ReactNative;
 
 var PageControl = React.createClass({
 
