@@ -13,12 +13,11 @@ var {
   View,
   Text
 } = ReactNative;
-
 var screen = require('Dimensions').get('window');
+var createReactClass = require('create-react-class');
+var PageControl = require('./');
 
-var PageControl = require('react-native-page-control');
-
-var PageControlDemo = React.createClass({
+var PageControlDemo = createReactClass({
   getInitialState: function () {
     return {
       currentPage: 0
@@ -38,7 +37,15 @@ var PageControlDemo = React.createClass({
     return (
       <View style={styles.container}>
         <View style={{backgroundColor:'red', width:screen.width - 10, marginLeft:5,height: 160}}>
-          <ScrollView ref="ad" pagingEnabled={true} horizontal={true} showsHorizontalScrollIndicator={false} bounces={false} onScroll={this.onScroll} scrollEventThrottle={16}>
+          <ScrollView
+            ref="ad"
+            pagingEnabled
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            bounces={false}
+            onScroll={this.onScroll}
+            scrollEventThrottle={16}
+          >
             <View style={{width:screen.width-10,  height:164}}>
               <Text>page1</Text>
             </View>
@@ -49,7 +56,15 @@ var PageControlDemo = React.createClass({
               <Text>page3</Text>
             </View>
           </ScrollView>
-          <PageControl style={{position:'absolute', left:0, right:0, bottom:10}} numberOfPages={3} currentPage={this.state.currentPage} hidesForSinglePage={true} pageIndicatorTintColor='gray' indicatorSize={{width:8, height:8}} currentPageIndicatorTintColor='black' onPageIndicatorPress={this.onItemTap} />
+          <PageControl
+            style={{ position:'absolute', left:0, right:0, bottom:10 }}
+            numberOfPages={3} currentPage={this.state.currentPage}
+            hidesForSinglePage
+            pageIndicatorTintColor='gray'
+            indicatorSize={{ width:8, height:8 }}
+            currentPageIndicatorTintColor='black'
+            onPageIndicatorPress={this.onItemTap}
+          />
         </View>
       </View>
     );
@@ -67,4 +82,4 @@ var styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('PageControlDemo', () => PageControlDemo);
+AppRegistry.registerComponent('index', () => PageControlDemo);

@@ -1,13 +1,45 @@
 {
-  "name": "PageControlDemo",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh"
+  "name": "react-native-page-control",
+  "version": "1.1.0",
+  "description": "React native page control, like ios  UIPageControl",
+  "author": "silentcloud",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silentcloud/react-native-page-control.git"
   },
+  "keywords": [
+    "react",
+    "react-native",
+    "react-component",
+    "page-control",
+    "PageControl",
+    "UIPageControl"
+  ],
+  "files": [
+    "index.js",
+    "PageControl.js"
+  ],
+  "main": "index.js",
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silentcloud/react-native-page-control/issues"
+  },
+  "homepage": "https://github.com/silentcloud/react-native-page-control",
   "dependencies": {
-    "react": "^15.1.0",
-    "react-native": "^0.27.2",
-    "react-native-page-control": "^1.0.7"
+    "create-react-class": "^15.6.0",
+    "prop-types": "^15.5.10"
+  },
+  "devDependencies": {
+    "babel-preset-react-native": "^2.1.0",
+    "rc-tools": "6.x",
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0",
+    "react-native": "~0.42.0",
+    "react-native-index-page": "~0.2.0"
+  },
+  "scripts": {
+    "init": "rc-tools run react-native-init",
+    "start": "react-native start"
   }
 }

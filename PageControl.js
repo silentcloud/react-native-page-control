@@ -1,21 +1,22 @@
 var React = require('react');
 var ReactNative = require('react-native');
 var assign = require('object-assign');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 
 var { StyleSheet, View, TouchableWithoutFeedback } = ReactNative;
 
-var PageControl = React.createClass({
-
+var PageControl = createReactClass({
     propTypes: {
-        numberOfPages: React.PropTypes.number.isRequired,
-        currentPage: React.PropTypes.number,
-        hidesForSinglePage: React.PropTypes.bool,
-        pageIndicatorTintColor: React.PropTypes.string,
-        currentPageIndicatorTintColor: React.PropTypes.string,
-        indicatorSize: React.PropTypes.object,
+        numberOfPages: PropTypes.number.isRequired,
+        currentPage: PropTypes.number,
+        hidesForSinglePage: PropTypes.bool,
+        pageIndicatorTintColor: PropTypes.string,
+        currentPageIndicatorTintColor: PropTypes.string,
+        indicatorSize: PropTypes.object,
         indicatorStyle: View.propTypes.style,
         currentIndicatorStyle: View.propTypes.style,
-        onPageIndicatorPress: React.PropTypes.func
+        onPageIndicatorPress: PropTypes.func
     },
 
     getDefaultProps: function () {
@@ -51,13 +52,21 @@ var PageControl = React.createClass({
             marginRight: 5
         };
 
-        var indicatorStyle = assign({}, indicatorItemStyle, this.props.indicatorStyle, {
+        var indicatorStyle = {
+          ...indicatorItemStyle,
+          ...this.props.indicatorStyle,
+          ...{
             backgroundColor: this.props.pageIndicatorTintColor
-        });
+          }
+        };
 
-        var currentIndicatorStyle = assign({}, indicatorItemStyle, this.props.currentIndicatorStyle, {
+        var currentIndicatorStyle = {
+          ...indicatorItemStyle,
+          ...this.props.currentIndicatorStyle,
+          ...{
             backgroundColor: this.props.currentPageIndicatorTintColor
-        });
+          }
+        };
 
         var pages = [];
         for (var i = 0; i < this.props.numberOfPages; i++) {
@@ -66,10 +75,10 @@ var PageControl = React.createClass({
 
         return (
           this.props.hidesForSinglePage && pages.length <= 1 ? null : <View style={[styles.container, defaultStyle, style]}>
-              {pages.map((el, i) => <TouchableWithoutFeedback key={i} onPress={this.onPageIndicatorPress.bind(this, i)}>
-                    <View style={i == this.props.currentPage ? currentIndicatorStyle: indicatorStyle} />
-                </TouchableWithoutFeedback>
-              )}
+            {pages.map((el, i) => <TouchableWithoutFeedback key={i} onPress={this.onPageIndicatorPress.bind(this, i)}>
+              <View style={i == this.props.currentPage ? currentIndicatorStyle: indicatorStyle} />
+            </TouchableWithoutFeedback>
+            )}
           </View>
         );
     }
