@@ -15,16 +15,20 @@ $ npm install react-native-page-control --save
 ## Example
 
 ```jsx
-<PageControl style={{position:'absolute', left:0, right:0, bottom:10}}
-             numberOfPages={3}
-             currentPage={1}
-             hidesForSinglePage={true}
-             pageIndicatorTintColor='gray'
-             currentPageIndicatorTintColor='white'
-             indicatorStyle={{borderRadius: 5}}
-             currentIndicatorStyle={{borderRadius: 5}}
-             indicatorSize={{width:8, height:8}}
-             onPageIndicatorPress={this.onItemTap} />
+import PageControl from 'react-native-page-control';
+
+<PageControl
+  style={{position:'absolute', left:0, right:0, bottom:10}}
+  numberOfPages={3}
+  currentPage={1}
+  hidesForSinglePage
+  pageIndicatorTintColor='gray'
+  currentPageIndicatorTintColor='white'
+  indicatorStyle={{borderRadius: 5}}
+  currentIndicatorStyle={{borderRadius: 5}}
+  indicatorSize={{width:8, height:8}}
+  onPageIndicatorPress={this.onItemTap}
+/>
 ```
 
 ## API (props)
