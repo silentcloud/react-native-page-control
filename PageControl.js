@@ -4,7 +4,7 @@ var assign = require('object-assign');
 var PropTypes = require('prop-types');
 var createReactClass = require('create-react-class');
 
-var { StyleSheet, View, TouchableWithoutFeedback } = ReactNative;
+var { StyleSheet, View, TouchableWithoutFeedback, ViewPropTypes } = ReactNative;
 
 var PageControl = createReactClass({
     propTypes: {
@@ -14,8 +14,8 @@ var PageControl = createReactClass({
         pageIndicatorTintColor: PropTypes.string,
         currentPageIndicatorTintColor: PropTypes.string,
         indicatorSize: PropTypes.object,
-        indicatorStyle: View.propTypes.style,
-        currentIndicatorStyle: View.propTypes.style,
+        indicatorStyle: ViewPropTypes.style,
+        currentIndicatorStyle: ViewPropTypes.style,
         onPageIndicatorPress: PropTypes.func
     },
 
