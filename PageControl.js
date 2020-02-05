@@ -1,6 +1,5 @@
 var React = require('react');
 var ReactNative = require('react-native');
-var assign = require('object-assign');
 var PropTypes = require('prop-types');
 var createReactClass = require('create-react-class');
 
