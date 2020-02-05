@@ -16,10 +16,12 @@
     "UIPageControl"
   ],
   "files": [
+    "index.d.ts",
     "index.js",
     "PageControl.js"
   ],
   "main": "index.js",
+  "types": "index.d.ts",
   "readmeFilename": "README.md",
   "license": "MIT",
   "bugs": {
