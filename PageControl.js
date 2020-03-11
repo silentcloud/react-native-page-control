@@ -10,6 +10,7 @@ var PageControl = createReactClass({
         numberOfPages: PropTypes.number.isRequired,
         currentPage: PropTypes.number,
         hidesForSinglePage: PropTypes.bool,
+        applyCurrentToPrevious: PropTypes.bool,
         pageIndicatorTintColor: PropTypes.string,
         currentPageIndicatorTintColor: PropTypes.string,
         indicatorSize: PropTypes.object,
@@ -23,6 +24,7 @@ var PageControl = createReactClass({
             numberOfPages: 0,
             currentPage: 0,
             hidesForSinglePage: false,
+            applyCurrentToPrevious: false,
             pageIndicatorTintColor: 'gray',
             currentPageIndicatorTintColor: 'white',
             indicatorSize: {width: 8, height: 8},
@@ -75,7 +77,8 @@ var PageControl = createReactClass({
         return (
           this.props.hidesForSinglePage && pages.length <= 1 ? null : <View style={[styles.container, defaultStyle, style]}>
             {pages.map((el, i) => <TouchableWithoutFeedback key={i} onPress={this.onPageIndicatorPress.bind(this, i)}>
-              <View style={i == this.props.currentPage ? currentIndicatorStyle: indicatorStyle} />
+            {this.props.applyCurrentToPrevious ? <View style={i <= this.props.currentPage ? currentIndicatorStyle: indicatorStyle} />
+              : <View style={i == this.props.currentPage ? currentIndicatorStyle: indicatorStyle} />}
             </TouchableWithoutFeedback>
             )}
           </View>
